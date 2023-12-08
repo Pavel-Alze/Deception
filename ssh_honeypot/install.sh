@@ -6,6 +6,7 @@ apt-get install -y inotify-tools
 iptables -A PREROUTING -t nat -p tcp --dport 22 -j REDIRECT --to-port 2222
 service netfilter-persistent save
 cp main.py /bin/
+chmod 0777 scr.sh
 cp scr.sh /usr/local/bin/
 cp on-boot-script.service /etc/systemd/system/
 systemctl daemon-reload
