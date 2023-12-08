@@ -11,5 +11,6 @@ cp scr.sh /usr/local/bin/
 cp on-boot-script.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable on-boot-script.service
-docker-compose up -d --build
+docker-compose build
+docker-compose up -d
 service on-boot-script start
