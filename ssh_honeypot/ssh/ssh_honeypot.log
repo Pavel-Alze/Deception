@@ -1,0 +1,23 @@
+2023-12-05 18:32:14,639 - root - INFO - New connection from: 127.0.0.1
+2023-12-05 18:32:14,641 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-12-05 18:32:18,877 - paramiko.transport - INFO - Auth rejected (none).
+2023-12-05 18:32:18,877 - root - INFO - client called get_allowed_auths (127.0.0.1) with username redsu
+2023-12-05 18:32:23,700 - root - INFO - new client credentials (127.0.0.1): username: redsu, password: redbu1100
+2023-12-05 18:32:23,700 - paramiko.transport - INFO - Auth granted (password).
+2023-12-05 18:32:23,701 - root - INFO - client called check_channel_request (127.0.0.1): session
+2023-12-05 18:32:23,701 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2023-12-05 18:32:23,702 - root - INFO - Client compression (127.0.0.1): none
+2023-12-05 18:32:23,702 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.3
+2023-12-05 18:32:23,702 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2023-12-05 18:32:27,912 - root - INFO - Command receied (127.0.0.1): ls
+2023-12-05 18:32:30,582 - root - INFO - Command receied (127.0.0.1): pwd
+2023-12-05 18:32:33,869 - root - INFO - Command receied (127.0.0.1): fdgs
+2023-12-05 18:32:34,794 - root - INFO - Command receied (127.0.0.1): sdf
+2023-12-05 18:32:35,704 - root - INFO - Command receied (127.0.0.1): sffg
+2023-12-05 18:32:36,691 - root - INFO - Command receied (127.0.0.1): dsf
+2023-12-05 18:32:38,065 - root - INFO - Command receied (127.0.0.1): 
+2023-12-05 18:32:38,237 - root - INFO - Command receied (127.0.0.1): 
+2023-12-05 18:32:38,390 - root - INFO - Command receied (127.0.0.1): 
+2023-12-05 18:32:49,270 - root - INFO - Command receied (127.0.0.1): exirt
+2023-12-05 18:32:54,891 - root - INFO - Command receied (127.0.0.1): exit
+2023-12-05 18:33:17,216 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
