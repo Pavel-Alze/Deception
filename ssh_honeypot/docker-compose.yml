@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  ssh:
+    build: ./ssh
+    restart: always
+    ports:
+      - 2222:2222
+    logging:
+      driver: json-file
