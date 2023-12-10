@@ -8,3 +8,5 @@ services:
       - 2222:2222
     logging:
       driver: json-file
+    container_name: honeypot
+    
