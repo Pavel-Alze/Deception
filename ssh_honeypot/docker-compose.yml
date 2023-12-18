@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  ssh:
+    build: ./ssh
+    restart: always
+    ports:
+      - "22:22"
+    logging:
+      driver: json-file
+    container_name: honeypot
