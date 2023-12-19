@@ -5,7 +5,7 @@ do
 sleep 10
 done
 
-inotifywait -e modify -m -r $(docker inspect --format='{{.LogPath}}' $(docker ps -aqf "name=ssh_honeypot_ssh"))|\
+inotifywait -e modify -m -r $(docker inspect --format='{{.LogPath}}' $(docker ps -aqf "name=honeypot"))|\
 (
 while read
 do
