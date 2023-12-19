@@ -113,7 +113,7 @@ def handle_connection(client, addr):
             print('*** No channel (from ' + client_ip + ').')
             raise Exception("No channel")
 
-        chan.settimeout(10)
+        chan.settimeout(60)
 
         if transport.remote_mac != '':
             logging.info('Client mac ({}): {}'.format(client_ip, transport.remote_mac))
