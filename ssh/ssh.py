@@ -175,7 +175,7 @@ def handle_connection(client, addr):
 
                 chan.send("\r\n")
                 command = command.rstrip()
-                print("INFO SSH ",'Command receied ({}): {}'.format(client_ip, command)
+                print("INFO SSH ",'Command receied ({}): {}'.format(client_ip, command))
                 logging.info('Command receied ({}): {}'.format(client_ip, command))
 
                 if command == "exit":
