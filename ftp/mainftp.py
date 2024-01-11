@@ -13,7 +13,7 @@ FILES_DIRECTORY = "pub"
 
 
 def logging(addr, cmd, arg):
-    print(addr, cmd, arg)
+    print("INFO FTP ",addr, cmd, arg)
     with open("honeypot.log", "a") as f:
         current_time = time.strftime("%Y-%m-%d %H:%M:%S")
         f.write("%s %s:%s: %s %s\n" % (current_time, *map(str, addr), cmd, arg))
