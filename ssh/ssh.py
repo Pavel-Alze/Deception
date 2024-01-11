@@ -15,9 +15,9 @@ from binascii import hexlify
 
 HOST_KEY = paramiko.RSAKey(filename='server.key')
 SSH_BANNER = "SSH-2.0-OpenSSH_8.2p1 SSHHostServer"
-SSH_FIRST_WORLD = "mirea@root$"
-USER_PASSWORD = "root"
-USER_VALID_NAME = "root"
+SSH_FIRST_WORLD = "mirea@admin$"
+USER_PASSWORD = "admin"
+USER_VALID_NAME = "admin"
 
 UP_KEY = '\x1b[A'.encode()
 DOWN_KEY = '\x1b[B'.encode()
@@ -37,7 +37,7 @@ def handle_cmd(cmd, chan, ip):
     if cmd.startswith("ls"):
         response = "README.txt"
     elif cmd.startswith("pwd"):
-        response = "/home/test"
+        response = "/home/admin"
     elif (cmd[:4] == "sudo"):
         response = "Failed to" + cmd[4:] + ": Access denied"
     elif (cmd[:3] == "cat"):
@@ -229,7 +229,7 @@ def start_server(port, bind):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Run an SSH honeypot server')
-    parser.add_argument("--port", "-p", help="The port to bind the ssh server to (default 22)", default=2222, type=int,
+    parser.add_argument("--port", "-p", help="The port to bind the ssh server to (default 22)", default=22, type=int,
                         action="store")
     parser.add_argument("--bind", "-b", help="The address to bind the ssh server to", default="", type=str,
                         action="store")
