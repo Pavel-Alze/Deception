@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  ssh:
+    build: ./ssh
+    restart: always
+    ports:
+      - "22:22"
+    logging:
+      driver: "json-file"
+    container_name: sshpot
+  ftp:
+    build: ./ftp
+    restart: always
+    ports:
+      - "21:21"
+    logging:
+      driver: "json-file"
+    container_name: ftppot
+  web:
+    build: ./web
+    restart: always
+    ports:
+      - "8000:8000"
+    logging:
+      driver: "json-file"
+    container_name: webpot
