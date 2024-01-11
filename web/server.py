@@ -1,26 +1,27 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, status
 import uvicorn
+from fastapi.responses import FileResponse
 
 app = FastAPI()
 
-@app.get("/", status_code=404)
+@app.get("/")
 def rootNotFound():
     print("INFO WEB get / api")
-    return {"message": "Resource Not Found"}
+    return FileResponse("main.html", status_code=status.HTTP_404_NOT_FOUND)
 
-@app.get("/main", status_code=404)
+@app.get("/main")
 def mainNotFound():
     print("INFO WEB get /main api")
-    return {"message": "Resource Not Found"}
+    return FileResponse("main.html", status_code=status.HTTP_404_NOT_FOUND)
 
-@app.get("/login", status_code=404)
+@app.get("/login")
 def loginNotFound():
     print("INFO WEB get /login api")
-    return {"message": "Resource Not Found"}
+    return FileResponse("main.html", status_code=status.HTTP_404_NOT_FOUND)
 
-@app.get("/admin", status_code=404)
+@app.get("/admin")
 def adminNotFound():
     print("INFO WEB get /admin api")
-    return {"message": "Resource Not Found"}
+    return FileResponse("main.html", status_code=status.HTTP_404_NOT_FOUND)
 
 uvicorn.run(app, host='0.0.0.0', port=8000)
