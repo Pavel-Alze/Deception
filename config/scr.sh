@@ -1,11 +1,16 @@
 #!/bin/bash
 
-until [ -n "$(docker ps --format 'table {{.ID}}\t{{.Names}}' | grep sshpot)" ]
+until [ -n "$(docker ps --format 'table {{.ID}}\t{{.Names}}' | grep ftppot)" ]
 do
 sleep 10
 done
 
-inotifywait -e modify -m -r $(docker inspect --format='{{.LogPath}}' $(docker ps -aqf "name=sshpot"))|\
+echo '' > /tmp/list
+echo $(docker inspect —format='{{.LogPath}}' $(docker ps -aqf "name=sshpot")) » /tmp/list
+echo $(docker inspect —format='{{.LogPath}}' $(docker ps -aqf "name=ftppot")) » /tmp/list
+echo $(docker inspect —format='{{.LogPath}}' $(docker ps -aqf "name=webpot")) » /tmp/list
+
+inotifywait -e modify -m —fromfile /tmp/list |\
 (
 while read
 do
