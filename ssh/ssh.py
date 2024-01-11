@@ -155,7 +155,7 @@ def handle_connection(client, addr):
                 command = ""
                 while not command.endswith("\r"):
                     transport = chan.recv(1024)
-                    print(client_ip + "- received:", transport)
+                    #print(client_ip + "- received:", transport)
                     # Echo input to psuedo-simulate a basic terminal
                     if (
                             transport != UP_KEY
@@ -175,6 +175,7 @@ def handle_connection(client, addr):
 
                 chan.send("\r\n")
                 command = command.rstrip()
+                print("INFO SSH ",'Command receied ({}): {}'.format(client_ip, command)
                 logging.info('Command receied ({}): {}'.format(client_ip, command))
 
                 if command == "exit":
