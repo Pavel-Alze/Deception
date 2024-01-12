@@ -10,7 +10,7 @@ echo $(docker inspect --format='{{.LogPath}}' $(docker ps -aqf "name=sshpot")) >
 echo $(docker inspect --format='{{.LogPath}}' $(docker ps -aqf "name=ftppot")) >> /tmp/list
 echo $(docker inspect --format='{{.LogPath}}' $(docker ps -aqf "name=webpot")) >> /tmp/list
 
-inotifywait -e modify -m —fromfile /tmp/list |\
+inotifywait -e modify -m --fromfile /tmp/list |\
 (
 while read
 do
